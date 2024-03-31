@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
+  </head>
+  <body>
+    <p>Hello World</p>
+    <script>
+      let socket = io();
+
+      socket.on("newUserConnect", (data) => {
+        document.body.innerHTML = "";
+        document.write(data.message);
+      });
+
+      // socket.on("myCustomEvent", (data) => {
+      //   document.write(data.message);
+      // });
+
+      /**
+       * Send custom message on server
+       */
+      // setTimeout(() => {
+      //   socket.emit("myCustomEventFromClientSide", {
+      //     message: "Message from fontend side",
+      //   });
+      // }, 3000);
+    </script>
+  </body>
+</html>
